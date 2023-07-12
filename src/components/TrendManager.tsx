@@ -13,7 +13,7 @@ const TrendManager = () => {
     const [isInit, setIsInit] = useState(false);
 
     const fetchData = async (selectedDate: Date) => {
-        const { data } = await axios.get<DailyTrend[]>(import.meta.env.API_ENDPOINT, {
+        const { data } = await axios.get<DailyTrend[]>('api.trendplots.com', {
             params: { date: selectedDate },
         });
 
