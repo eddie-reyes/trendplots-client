@@ -2,7 +2,7 @@ import { Circle } from 'two.js/src/shapes/circle';
 import { Group } from 'two.js/src/group';
 import { DailyInstance } from './types';
 
-import { MultilineText } from './multiline-text/dist/index';
+import { MultilineText } from './multiline-text/index';
 
 import { two, getNonOverlappingPos, SIZE_FACTOR } from './graphics';
 
