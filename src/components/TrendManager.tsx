@@ -13,12 +13,9 @@ const TrendManager = () => {
     const [isInit, setIsInit] = useState(false);
 
     const fetchData = async (selectedDate: Date) => {
-        const { data } = await axios.get<DailyTrend[]>(
-            'http://trends-server.eba-ry3jpd2p.us-west-1.elasticbeanstalk.com/',
-            {
-                params: { date: selectedDate },
-            }
-        );
+        const { data } = await axios.get<DailyTrend[]>(import.meta.env.API_ENDPOINT, {
+            params: { date: selectedDate },
+        });
 
         createGraphics(data);
 
