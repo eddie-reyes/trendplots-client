@@ -27,7 +27,7 @@ notAvailable.scale = 2;
 
 const zui = new ZUI(two.scene);
 zui.addLimits(0.5, 200);
-zui.zoomSet(1, two.width, two.height);
+zui.zoomSet(1, two.width / 2, two.height / 2);
 
 let mousePivot = new Two.Vector();
 let isDragging = false;
