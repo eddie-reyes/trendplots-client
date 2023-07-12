@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect, useImperativeHandle, forwardRef } from 'react';
 
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 interface Props {
     onSliderUpdate: (hour: number) => void;
 }
 
-const currentHour = new Date().getHours();
+const currentHour = new Date(moment().tz('America/Los_Angeles').format()).getHours();
 
 const Slider = forwardRef(({ onSliderUpdate }: Props, ref) => {
     const [labelPosition, setLabelPosition] = useState(0);

@@ -36,12 +36,20 @@ export class TrendGraphic {
         this.circle.radius = radius;
         this.label.scale = radius * SIZE_FACTOR;
 
-        if (this.label.children.length === 2) {
-            this.label.position.set(0, -radius * 0.1); //for some reason a for loop breaks two js so instead i check each length individually
-        }
+        const numOfLines = this.label.children.length;
 
-        if (this.label.children.length === 3) {
-            this.label.position.set(0, -radius * 0.2);
+        switch (
+            numOfLines //have to use switch statement -- for loop breaks two js for some reason?
+        ) {
+            case 2:
+                this.label.position.set(0, -radius * 0.1);
+                break;
+            case 3:
+                this.label.position.set(0, -radius * 0.2);
+                break;
+            case 4:
+                this.label.position.set(0, -radius * 0.3);
+                break;
         }
 
         if (!this.isInitalized) {
