@@ -17,7 +17,7 @@ export const two = new Two({
 
 const BOUNDS = {
     x: 2000,
-    y: 1000,
+    y: 2000,
 };
 
 const notAvailable = two.makeText('Data not available.', two.width / 2, two.height / 2);
@@ -26,8 +26,7 @@ notAvailable.visible = false;
 notAvailable.scale = 2;
 
 const zui = new ZUI(two.scene);
-zui.addLimits(0.5, 200);
-zui.zoomSet(1, two.width / 2, two.height / 2);
+zui.addLimits(1, 200);
 
 let mousePivot = new Two.Vector();
 let isDragging = false;
