@@ -17,7 +17,7 @@ export const two = new Two({
 
 const BOUNDS = {
     x: 2000,
-    y: 2000,
+    y: 1000,
 };
 
 const notAvailable = two.makeText('Data not available.', two.width / 2, two.height / 2);
