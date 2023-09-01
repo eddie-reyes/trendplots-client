@@ -16,8 +16,8 @@ export const two = new Two({
 }).appendTo(elem);
 
 const BOUNDS = {
-    x: 2000,
-    y: 1000,
+    x: 1500,
+    y: 1500,
 };
 
 const notAvailable = two.makeText('Data not available.', two.width / 2, two.height / 2);
@@ -58,15 +58,11 @@ export const resetGraphics = () => {
 };
 
 export const getNonOverlappingPos = (instances: DailyInstance[]) => {
-    const visibleTrendGraphics: Array<TrendGraphic> = trendGraphics.filter(
-        graphic => graphic.graphicsGroup.visible === true
-    );
-
     let randPos = getRandPos();
     let isOverlapping = true;
 
     while (isOverlapping) {
-        const overlapTest = visibleTrendGraphics.every(graphic => {
+        const overlapTest = trendGraphics.every(graphic => {
             let graphicPos = graphic.graphicsGroup.position;
             let x = randPos.x - graphicPos.x;
             let y = randPos.y - graphicPos.y;
